@@ -1,4 +1,5 @@
 import { client } from '../../libs/client'
+import Link from 'next/link'
 import styles from '../../styles/Home.module.scss'
 export const getStaticProps = async (context) => {
   const id = context.params.id
@@ -27,6 +28,7 @@ export default function BlogId({ blog }) {
         dangerouslySetInnerHTML={{ __html: `${blog.body}` }}
         className={styles.post}
       ></div>
+      <Link href="/">Home</Link>
     </main>
   )
 }
